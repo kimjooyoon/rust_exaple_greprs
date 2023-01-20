@@ -38,7 +38,7 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let mut results = Vec::new();
 
     for line in contents.lines() {
-        if line.contains(query){
+        if line.contains(query) {
             results.push(line);
         }
     }
@@ -51,7 +51,7 @@ mod test {
     use super::*;
 
     #[test]
-    fn one_result(){
+    fn one_result() {
         let query = "duct";
         let contents = "\
 Rust:
