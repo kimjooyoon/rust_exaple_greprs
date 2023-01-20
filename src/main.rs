@@ -1,5 +1,8 @@
+extern crate greprs;
+
 use std::{env, process};
-use ::greprs::*;
+
+use greprs::Config;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -13,7 +16,7 @@ fn main() {
     println!("Searching for {}", config.query);
     println!("In file {}", config.filename);
 
-    if let Err(e) = run(config) {
+    if let Err(e) = greprs::run(config) {
         println!("Application error: {}", e);
 
         process::exit(1);
