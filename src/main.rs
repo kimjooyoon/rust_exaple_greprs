@@ -11,10 +11,17 @@ fn main() {
             process::exit(1);
         });
 
+    println!("Searching for {}", config.query);
+    println!("In file {}", config.filename);
+
+    run(config);
+}
+
+fn run(config: Config){
     let mut f = File::open(config.filename)
         .expect("file not found");
-    let mut contents = String::new();
 
+    let mut contents = String::new();
     f.read_to_string(&mut contents)
         .expect("Something went wrong reading the file");
 
