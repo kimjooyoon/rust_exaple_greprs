@@ -17,7 +17,7 @@ fn main() {
     run(config);
 }
 
-fn run(config: Config){
+fn run(config: Config) {
     let mut f = File::open(config.filename)
         .expect("file not found");
 
